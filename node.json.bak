@@ -1,0 +1,14 @@
+{
+  "resolver": {
+    "nameservers": [ "10.0.1.194" ]
+  },
+  "run_list": [ "recipe[db_backup]" ],
+  "root": {"ubuntu": "ubuntu"}
+}
+
+
+
+#{
+#"root": {"password": "root"},
+#"run_list": [ "recipe[db_backup::postgres.rb]" ]
+#}
