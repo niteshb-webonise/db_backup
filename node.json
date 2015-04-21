@@ -1,8 +1,7 @@
 {
 
-  "run_list": [ "recipe[db_backup::mysql]" ],
-  "root": {"ubuntu": "ubuntu"}
-}
+  "run_list": [ "recipe[db_backup::mysql]" ]
+ }
 
 
 

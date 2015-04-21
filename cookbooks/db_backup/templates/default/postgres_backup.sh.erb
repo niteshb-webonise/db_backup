@@ -1,9 +1,4 @@
-
-
-
-
-
-if ! PGPASSWORD="<%= node[:database][:password] %>" pg_dump -U <%= node[:database][:user] %> -h localhost <%= node[:database][:name]%>  | gzip > /root/db_backup/postgres/<%= node[:project][:name]%>_`date '+%Y-%m-%d-%H-%M'`.sql.gz; then
+if ! PGPASSWORD="<%= node[:database][:password] %>" pg_dump -U <%= node[:database][:user] %> -h=<%= node[:host] %> <%= node[:database][:name]%>  | gzip > /root/db_backup/postgres/<%= node[:project][:name]%>_`date '+%Y-%m-%d-%H-%M'`.sql.gz; then
   /bin/echo "#########################################################" >> /var/log/postgres_backup.log
   /bin/echo "Live Postgres backup failed on `date +%d-%m-%Y-%H-%M`" >> /var/log/postgres_backup.log
 
@@ -11,11 +6,13 @@ if ! PGPASSWORD="<%= node[:database][:password] %>" pg_dump -U <%= node[:databas
 else
   /bin/echo "#########################################################" >> /var/log/postgres_backup.log
   /bin/echo "Live Postgres backup taken successfully on `date +%d-%m-%Y-%H-%M`" >> /var/log/postgres_backup.log
-#  /bin/echo `ls -rtl /root/db_backup/postgres/ | tail -n 1` >> /var/log/mysql_backup.log
 
 fi
 
-find /root/db_backup/postgres/ -mmin +14400 | xargs rm -vf
+
+###################Backup Rotation for 10 days#############################################
+
+find /root/db_backup/postgres/ -mmin +<%= node[:rotation_days] %> | xargs rm -vf
 
 
 
