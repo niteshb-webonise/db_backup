@@ -1,0 +1,18 @@
+{:config_missing=>true}
+[2015-05-05T14:00:16+05:30] WARN: *****************************************
+[2015-05-05T14:00:16+05:30] WARN: Did not find config file: {, using command line options.
+[2015-05-05T14:00:16+05:30] WARN: *****************************************
+[2015-05-05T14:00:16+05:30] INFO: Forking chef instance to converge...
+[2015-05-05T14:00:16+05:30] INFO: *** Chef 12.1.1 ***
+[2015-05-05T14:00:16+05:30] INFO: Chef-client pid: 1334
+[2015-05-05T14:00:17+05:30] INFO: Setting the run_list to ["recipe[sanity]"] from CLI options
+[2015-05-05T14:00:17+05:30] INFO: Run List is [recipe[sanity]]
+[2015-05-05T14:00:17+05:30] INFO: Run List expands to [sanity]
+[2015-05-05T14:00:17+05:30] INFO: Starting Chef Run for test-container3
+[2015-05-05T14:00:17+05:30] INFO: Running start handlers
+[2015-05-05T14:00:17+05:30] INFO: Start handlers complete.
+[2015-05-05T14:00:17+05:30] ERROR: Running exception handlers
+[2015-05-05T14:00:17+05:30] ERROR: Exception handlers complete
+[2015-05-05T14:00:17+05:30] FATAL: Stacktrace dumped to /var/chef/cache/chef-stacktrace.out
+[2015-05-05T14:00:17+05:30] ERROR: Cookbook sanity not found. If you're loading sanity from another cookbook, make sure you configure the dependency in your metadata
+[2015-05-05T14:00:17+05:30] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)

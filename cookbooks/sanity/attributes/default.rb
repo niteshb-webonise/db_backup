@@ -1,0 +1,8 @@
+default[:project][:name] = "myproject"
+default[:scripts] = "/root/scripts"
+default[:script][:hour] = "11"
+default[:script][:minute] = "10"
+default[:database][:type] = "mongo"
+default[:database][:user] = "root"
+default[:database][:name] = "mysql"
+default[:database][:password] = "root"

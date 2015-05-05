@@ -1,6 +1,6 @@
 {
 
-  "run_list": [ "recipe[db_backup::mysql]" ]
+  "run_list": [ "recipe[sanity]" ]
  }
 
 
