@@ -8,8 +8,8 @@
 #
 
 execute "Create backup directory for mysql" do
-command "mkdir -p #{node[:backup_scripts][:target_directory]} "
 command "mkdir -p #{node[:backup]}mysql"
+command "mkdir -p #{node[:backup_scripts][:target_directory]} "
 end
 
 
